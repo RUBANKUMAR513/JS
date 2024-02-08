@@ -1,0 +1,150 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+   
+}
+
+.header{
+    height: 50px;
+    border: 1px solid black;
+    grid-column: 1 / span 4;
+    background-color: white;
+    border-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.box1{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    border-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    
+}
+.box2{
+    border: 1px solid black;
+    grid-column: 2 / span 2;
+    border-radius: 20px;
+    background-color: white;
+    border-color: white;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+.box3{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+.box4{
+    height: 325px;
+    border: 1px solid black;
+    grid-column: 1 / span 2;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    
+}
+.box5{
+    border: 1px solid black;
+    grid-column: 3/ span 2;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+
+.circuit h6{
+    font-size: x-large;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.fig1{
+    padding:40px;
+    width: 200px;
+    height: 200px;  
+    padding-left: 100px;
+}
+.fig2{
+    padding:10px;
+    width: 200px;
+    height: 200px;  
+    
+    padding-left: 130px;
+}
+.input1 h6{
+    font-size: x-large;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  
+}
+.group_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+label{
+    font-size: x-large;
+}
+input{
+    width: 300px;
+    height: 15px;
+    border-radius: 30px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    
+}
+select{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+.btn1{
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    border: none;
+    color: white;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+.btn2{
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+}
+.error_msg{
+
+    padding-left: 280px;
+    
+}

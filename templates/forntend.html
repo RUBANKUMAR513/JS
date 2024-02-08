@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>front_end</title>
+    <link rel="stylesheet" href="../static/css/forntend_css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 class="title">Voltage Divider</h2>
+        </div>
+    <div class="box1">
+       <div class="circuit">
+          <h6>Circuit</h6>
+       </div>
+       <div class="fig_1">
+        <img  class="fig1" src="../static/images/220px-Resistive_divider2.svg.png" alt="">
+       </div>
+    </div>
+    <div class="box2">
+        <form action="#" name="component_input_forms">
+        <div class="input1">
+            <h6>Input</h6>
+         </div>
+         <div class="error_msg">
+            <p id="msg"></p>
+         </div>
+         <div class="group_1">
+            <div>
+               <label for="R1">R1 :</label>
+            </div>
+            <div>
+                <input name="R1" id="R1" class="r1">
+            </div>
+            <div>
+                <select id="r1_unit" name="Unit1">
+                    <option value="kilo">kilo</option>
+                    <option value="mega">mega</option>
+                    <option value="ohms">ohms</option>
+                </select>
+            </div>
+            
+            </div>
+            <div class="group_1">
+                <div>
+                   <label for="R2">R2 :</label>
+                </div>
+                <div>
+                    <input name="R2" id="R2" class="r2">
+                </div>
+                <div>
+                    <select id="r2_unit" name="Unit2">
+                        <option value="kilo">kilo</option>
+                        <option value="mega">mega</option>
+                        <option value="ohms">ohms</option>
+                    </select>
+                </div>
+                
+                </div>
+                <div class="group_1">
+                    <div>
+                       <label for="Vin">Vin :</label>
+                    </div>
+                    <div>
+                        <input name="Vin" id="Vin" class="vin">
+                    </div>
+                    <div>
+                       <button id="ok-btn" onclick="calculate()">CALCULATE</button>
+                    </div>
+                    
+                    </div>
+                    <div class="group_1">
+                        <div>
+                           <label for="Vout">Vout:</label>
+                        </div>
+                        <div>
+                            <input name="Vout" id="Vout" class="vout">
+                        </div>
+                        <div>
+                           <input class="btn1" type="reset" value="CLEAR">
+                        </div>
+                        
+                        </div>
+    </div>
+    </form>
+    <div class="box3">
+        <div class="input1">
+            <h6>Forumula</h6>
+        </div>
+        <div>
+            <img class="fig2"src="../static/images/images.png" alt="">
+        </div>
+
+    </div>
+    <div class="box4">
+        <form action="">
+        <div class="input1">
+            <h6>Add Column</h6>
+         </div>
+         <div class="group_1">
+            <div>
+               <label for="r1_1">R1 :</label>
+            </div>
+            <div>
+                <input id="r1_1" class="r1">
+            </div>
+            <div>
+                <select name="values" id="unit">
+                    <option value="kilo">kilo</option>
+                    <option value="mega">mega</option>
+                    <option value="ohms">ohms</option>
+                </select>
+            </div>
+            
+            </div>
+            <div class="group_1">
+                <div>
+                   <label for="r2_1">R2 :</label>
+                </div>
+                <div>
+                    <input class="r1" id="r2_1">
+                </div>
+                <div>
+                    <select name="values2" id="unit2">
+                        <option value="kilo">kilo</option>
+                        <option value="mega">mega</option>
+                        <option value="ohms">ohms</option>
+                    </select>
+                </div>
+                
+                </div>
+                <div class="group_1">
+                    <div>
+                       <label for="Vin_1">Vin :</label>
+                    </div>
+                    <div>
+                        <input class="r1" id="Vin_1">
+                    </div>
+                    <div>
+                       <button type="submit">ADD</button>
+                    </div>
+                    
+                    </div>
+                    <div class="group_1">
+                        <div>
+                           <label for="Vout_1">Vout:</label>
+                        </div>
+                        <div>
+                            <input class="r1" id="Vout_1">
+                        </div>
+                        <div>
+                           <input class="btn2" type="reset" value="CLEAR">
+                        </div>
+                        
+                        </div>
+    </div>
+    </form>
+    <div class="box5">
+        <div class="input1">
+            <h6>Tables</h6>
+         </div>
+    </div>
+    </div>
+    <script src="../static/js/forntend_js.js"></script>
+</body>
+</html>
