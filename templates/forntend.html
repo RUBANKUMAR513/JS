@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../static/css/forntend_css.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2 class="title">Voltage Divider</h2>
-        </div>
+    <div class="header">
+        <h2 class="title">Voltage Divider</h2>
+    </div>
+    <div class="container">   
     <div class="box1">
        <div class="circuit">
           <h6>Circuit</h6>
@@ -20,7 +20,7 @@
        </div>
     </div>
     <div class="box2">
-        <form action="#" name="component_input_forms">
+        <form action="#" name="component_input_forms" id="component_input_forms">
         <div class="input1">
             <h6>Input</h6>
          </div>
@@ -79,7 +79,7 @@
                             <input name="Vout" id="Vout" class="vout">
                         </div>
                         <div>
-                           <input class="btn1" type="reset" value="CLEAR">
+                           <input class="btn1" type="reset" value="CLEAR" >
                         </div>
                         
                         </div>
@@ -94,8 +94,9 @@
         </div>
 
     </div>
+
     <div class="box4">
-        <form action="">
+        <form action="/insertdata" id="storeinputs" name="storeinputs" method="POST">
         <div class="input1">
             <h6>Add Column</h6>
          </div>
@@ -104,7 +105,7 @@
                <label for="r1_1">R1 :</label>
             </div>
             <div>
-                <input id="r1_1" class="r1">
+                <input id="r1_1" class="r1" name="r1_1">
             </div>
             <div>
                 <select name="values" id="unit">
@@ -120,7 +121,7 @@
                    <label for="r2_1">R2 :</label>
                 </div>
                 <div>
-                    <input class="r1" id="r2_1">
+                    <input class="r1" id="r2_1" name="r2_1">
                 </div>
                 <div>
                     <select name="values2" id="unit2">
@@ -136,10 +137,10 @@
                        <label for="Vin_1">Vin :</label>
                     </div>
                     <div>
-                        <input class="r1" id="Vin_1">
+                        <input class="r1" id="Vin_1" name="Vin_1">
                     </div>
                     <div>
-                       <button type="submit">ADD</button>
+                       <button type="submit" onclick="submit_form()">ADD</button>
                     </div>
                     
                     </div>
@@ -148,7 +149,7 @@
                            <label for="Vout_1">Vout:</label>
                         </div>
                         <div>
-                            <input class="r1" id="Vout_1">
+                            <input class="r1" id="Vout_1" name="Vout_1">
                         </div>
                         <div>
                            <input class="btn2" type="reset" value="CLEAR">
@@ -161,8 +162,38 @@
         <div class="input1">
             <h6>Tables</h6>
          </div>
+         <div class="table">
+            <table id="datatable">
+                <thead >
+                    <tr>
+                        <th>SI.NO</th>
+                        <th>R1</th>
+                        <th>R2</th>
+                        <th>Vin</th>
+                        <th>Vout</th>
+                        <th>Delete</th>
+                        </tr>
+                </thead>
+                         
+              
+                        {% for row in Result %}
+                         
+                <tr> 
+                        <td></td>
+                        <td class="d">{{row[0]}}</td>
+                        <td class="d">{{row[1]}}</td>
+                        <td class="d">{{row[2]}}</td>
+                        <td class="d">{{row[3]}}</td>
+                        <td class="d"><div class="del_btn"><input class="del" type="submit" value="Delete" id="{{row[4]}}" onclick="del(this.id)"></div></td>
+             
+                </tr>
+                        {% endfor %}
+                    
+    </table>
+         </div>
     </div>
     </div>
     <script src="../static/js/forntend_js.js"></script>
+    <script src="../static/js/callstoreinput.js"></script> 
 </body>
 </html>

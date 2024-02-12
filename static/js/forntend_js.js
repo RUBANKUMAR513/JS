@@ -16,7 +16,6 @@ function change(x) {
     }
     return unit; 
 }
-
 function calculate(){
     let x = document.forms["component_input_forms"];
     const r1= x["R1"].value;
@@ -25,11 +24,13 @@ function calculate(){
     const vout= x["Vout"].value;
     const Unit_1= change(x["Unit1"].value);
     const Unit_2= change(x["Unit2"].value);
-
+    document.getElementById("r1_1").value=r1;
+    document.getElementById("r2_1").value=r2;
+    document.getElementById("Vin_1").value=vin;
+    document.getElementById("Vout_1").value=vout;
     console.log(r1,r2,vin,vout,Unit_1,Unit_2);
   
     if(r1!="" && vin!="" && vout!="" && r2!="" || r1=="" && vin=="" && vout=="" && r2=="") {
-        console.log("hi")
     	let msg = document.getElementById("msg");
         msg.style.color = "red";
         msg.innerHTML="Give Exactly Three Inputs";
@@ -50,35 +51,54 @@ function calculate(){
     
     
 function source(r1,r2,vin,vout,Unit_1,Unit_2){
-        if(r1==r2){
-        if(vin.length==0){
-          let ans1=2*vout;
-          document.getElementById("Vin").setAttribute('value',ans1);
-        }
-        else if(vout.length==0){
-            let ans2=vin*0.5;
-            document.getElementById("Vout").setAttribute('value',ans2);
-        }
-    }
-    else{
         if(r1.length==0){
-            let r1_ans=r2*((vin/vout)-r2);
-            document.getElementById("R1").setAttribute('value',r1_ans);
-           
+            r2=r2*Unit_2;
+            let r1_ans=((vin-vout)*r2)/vout;
+            if(Unit_1==1000000){
+                r1_ans=r1_ans/1000000;
+                document.getElementById("R1").value=r1_ans.toFixed(2);
+                document.getElementById("r1_1").value=r1_ans.toFixed(2);
+            }else if(Unit_1==1000){
+                r1_ans=r1_ans/1000;
+                document.getElementById("R1").value=r1_ans.toFixed(2);
+                document.getElementById("r1_1").value=r1_ans.toFixed(2);
+            }
+            else{
+                document.getElementById("R1").value=r1_ans.toFixed(2);
+                document.getElementById("r1_1").value=r1_ans.toFixed(2);
+            }
     }
         else if(r2.length==0){
-            let r2_ans=r1*(vout/(vin-vout));
-            document.getElementById("R2").setAttribute('value',r2_ans);
+            r1=r1*Unit_1;
+            let r2_ans=(vout*r1)/(vin-vout); 
+            if(Unit_2==1000000){
+                r2_ans=r2_ans/1000000;
+                document.getElementById("R2").value=r2_ans.toFixed(2);
+                document.getElementById("r2_1").value=r2_ans.toFixed(2);
+            }else if(Unit_2==1000){
+                r2_ans=r2_ans/1000;
+                document.getElementById("R2").value=r2_ans.toFixed(2);
+                document.getElementById("r2_1").value=r2_ans.toFixed(2);
+            }
+            else{
+                document.getElementById("R2").value=r2_ans.toFixed(2);
+                document.getElementById("r2_1").value=r2_ans.toFixed(2);
+            }
     }       
 
         else if(vin.length==0){
-            let vin_ans=vout*((r1+r2)/r2);
-            document.getElementById("Vin").setAttribute('value',vin_ans);
+            r1=r1*Unit_1;
+            r2=r2*Unit_2;
+            let vin_ans=(vout*(r1+r2)/r2);
+            document.getElementById("Vin").value=vin_ans.toFixed(2);
+            document.getElementById("Vin_1").value=vin_ans.toFixed(2);
 
     }
         else if(vout.length==0){
-            let vout_ans=vin*(r2/(r1+r2));
-            document.getElementById("Vout").setAttribute('value',vout_ans);
+            r1=r1*Unit_1;
+            r2=r2*Unit_2;
+            let vout_ans=(r2*vin)/(r1+r2);
+            document.getElementById("Vout").value=vout_ans.toFixed(2);
+            document.getElementById("Vout_1").value=vout_ans.toFixed(2);
     }
-}
 }
